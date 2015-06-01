@@ -52,6 +52,7 @@ public class CommandTester {
 
         //USER
         UserTests ut = new UserTests();
+        ut.execute();
 
         //ADMIN (POST, PUT, DELETE)
         AdminTests at = new AdminTests();
