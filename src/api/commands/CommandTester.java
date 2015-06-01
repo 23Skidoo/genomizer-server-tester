@@ -27,56 +27,59 @@ public class CommandTester {
 
 
     public CommandTester (Connection connection){
-        conn = connection;
+        for(int i = 0; i < TestCollection.laps; i++){
+            conn = connection;
 
-        LoginTests lt = new LoginTests();
-        lt.execute();
+            LoginTests lt = new LoginTests();
+            lt.execute();
 
-        new LoginTest("POST LOGIN", "testadmin", "baguette", true).execute();
+            new LoginTest("POST LOGIN", "testadmin", "baguette", true).execute();
 
-        //Test experiments (POST, GET, PUT, DELETE)
-        ExperimentTests e = new ExperimentTests();
-        e.execute();
+            //Test experiments (POST, GET, PUT, DELETE)
+            ExperimentTests e = new ExperimentTests();
+            e.execute();
 
-        //Test FILE (POST, GET, DELETE)
-        FileTests ft = new FileTests();
-        ft.execute();
+            //Test FILE (POST, GET, DELETE)
+            FileTests ft = new FileTests();
+            ft.execute();
 
-        //CONVERT (PUT)
-        ConvertTests ct = new ConvertTests();
-        ct.execute();
+            //CONVERT (PUT)
+            ConvertTests ct = new ConvertTests();
+            ct.execute();
 
-        //SEARCH (GET)
-        SearchTests st = new SearchTests();
-        st.execute();
+            //SEARCH (GET)
+            SearchTests st = new SearchTests();
+            st.execute();
 
-        //USER
-        UserTests ut = new UserTests();
-        ut.execute();
+            //USER
+            UserTests ut = new UserTests();
+            ut.execute();
 
-        //ADMIN (POST, PUT, DELETE)
-        AdminTests at = new AdminTests();
-        at.execute();
+            //ADMIN (POST, PUT, DELETE)
+            AdminTests at = new AdminTests();
+            at.execute();
 
-        //PROCESSING
-        ProcessingTests pt = new ProcessingTests();
+            //PROCESSING
+            ProcessingTests pt = new ProcessingTests();
 
 
-        //ANNOTATION (POST, PUT, DELETE, GET)
-        AnnotationTests a = new AnnotationTests();
-        a.execute();
+            //ANNOTATION (POST, PUT, DELETE, GET)
+            AnnotationTests a = new AnnotationTests();
+            a.execute();
 
-        //GENOME HANDLING (POST, PUT, DELETE, GET)
-        GenomeReleaseTests g = new GenomeReleaseTests();
-        g.execute();
+            //GENOME HANDLING (POST, PUT, DELETE, GET)
+            GenomeReleaseTests g = new GenomeReleaseTests();
+            g.execute();
 
-        DeleteExperimentTest de = new DeleteExperimentTest("CLEANUP", CommandTester.EXP_NAME, true);
-        de.execute();
+            DeleteExperimentTest de = new DeleteExperimentTest("CLEANUP", CommandTester.EXP_NAME, true);
+            de.execute();
 
-        Debug.log(de.toString() , de.finalResult == de.expectedResult);
+            Debug.log(de.toString() , de.finalResult == de.expectedResult);
 
-        new LogoutTest("DELETE LOGIN", true).execute();
+            new LogoutTest("DELETE LOGIN", true).execute();
 
+
+        }
 
         System.out.println("\n-------------------------------------------------");
         System.out.println("Total tests run: " + TestCollection.runTests);
