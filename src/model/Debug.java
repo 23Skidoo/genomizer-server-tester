@@ -10,11 +10,11 @@ public class Debug {
     public static void log(String message, boolean status) {
         if(status){
             System.out.flush();
-            System.out.printf("TEST: %-30.30s  STATUS: %-30.30s%n",message, status);
+            System.out.printf("TEST: %-30.30s  STATUS: %-30.30s%n",message, "SUCCESS");
             System.out.flush();
         }else{
             System.err.flush();
-            System.err.printf("TEST: %-30.30s  STATUS: %-30.30s%n",message, status);
+            System.err.printf("TEST: %-30.30s  STATUS: %-30.30s%n",message, "FAIL");
             System.err.flush();
         }
     }
