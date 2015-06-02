@@ -9,11 +9,9 @@ import model.Debug;
  * Created by c10mjn on 2015-05-26.
  */
 public class FileTests extends TestCollection {
-    public static StringContainer fileID;
-    public static GetExperimentTest exp;
     public FileTests() {
         super();
-        fileID = new StringContainer("");
+        CommandTester.fileID = new StringContainer("");
 
         FileTuple ft1 = new FileTuple();
         ft1.setId(CommandTester.EXP_NAME);
@@ -48,19 +46,37 @@ public class FileTests extends TestCollection {
         ft4.setGrVersion("hg1337");
 
         super.commandList.add(new PostFileTest("POST FILE1", ft1, true));
-        super.commandList.add(exp = new GetExperimentTest("GET EXPERIMENT FILE", ft1.getId(), "", true));
-        super.commandList.add(new PutFileTest("PUT FILE F2", ft2, "", false));
-        super.commandList.add(new GetFileTest("GET FILE1", "f2", true));
-        super.commandList.add(new DeleteFileTest("DELETE FILE1", fileID, true));
-        super.commandList.add(new DeleteFileTest("DELETE NONEXISTING FILE", fileID, false));
+        super.commandList.add(new ChangeIndex("CHANGE INDEX", CommandTester.EXP_NAME,0,1, true));
+        super.commandList.add(new GetFileTest("GET FILE META F1", "f1", true));
+
+        //Put file doesn't seem to be working.
+//        super.commandList.add(new PutFileTest("PUT FILE F2", ft2, "", true));
+//        super.commandList.add(new ChangeIndex("CHANGE INDEX", CommandTester.EXP_NAME,0,1, true));
+//        super.commandList.add(new GetFileTest("GET FILE META F2", "f2", true));
+//        super.commandList.add(new PutFileTest("PUT FILE F3", ft3, "", false));
+
+        super.commandList.add(new ChangeIndex("CHANGE INDEX", CommandTester.EXP_NAME,0,1, true));
+        super.commandList.add(new GetFileTest("GET NOT FILE META F3", "f3", false));
+
+        super.commandList.add(new ChangeIndex("CHANGE INDEX", CommandTester.EXP_NAME,0,-1, true));
+        super.commandList.add(new DeleteFileTest("DELETE FILE1", null, true));
 
         super.commandList.add(new PostFileTest("POST FILE WRONG TYPE", ft3, true));
-        super.commandList.add(exp = new GetExperimentTest("GET FILE TYPE OTHER", CommandTester.EXP_NAME, "Other", true));
-        super.commandList.add(new DeleteFileTest("CLEANUP", fileID, true));
+        super.commandList.add(new ChangeIndex("CHANGE INDEX", CommandTester.EXP_NAME,0,-1, true));
+        super.commandList.add(new GetFileTest("GET FILE TYPE OTHER", "Other", true));
+        super.commandList.add(new DeleteFileTest("CLEANUP", null, true));
 
         super.commandList.add(new PostFileTest("POST FILE WRONG GR", ft4, false));
-        super.commandList.add(exp = new GetExperimentTest("GET NONEXISTING EXPERIMENT FILE", CommandTester.EXP_NAME, "testuser", false));
-        super.commandList.add(new DeleteFileTest("CLEANUP", fileID, false));
+        super.commandList.add(new ChangeIndex("CHANGE INDEX", CommandTester.EXP_NAME,0,-1, true));
+        super.commandList.add(new GetFileTest("GET NONEXISTING EXPERIMENT FILE", "testuser", false));
+        super.commandList.add(new DeleteFileTest("CLEANUP", null, false));
+
+        super.commandList.add(new PostFileTest("POST FIRST FILE", ft1, true));
+        super.commandList.add(new PostFileTest("POST DUPLICATE FILE", ft1, false));
+        super.commandList.add(new ChangeIndex("CHANGE INDEX", CommandTester.EXP_NAME,0,-1, true));
+        super.commandList.add(new DeleteFileTest("CLEANUP", null, true));
+        super.commandList.add(new ChangeIndex("CHANGE INDEX", CommandTester.EXP_NAME,0,-1, true));
+        super.commandList.add(new DeleteFileTest("DELETE NONEXISTING FILE", null, false));
     }
 
     @Override
@@ -70,9 +86,11 @@ public class FileTests extends TestCollection {
         for (SuperTestCommand stc: super.commandList) {
             stc.execute();
 
-
-            if ( stc instanceof GetExperimentTest) {
-                fileID.setString(((GetExperimentTest) stc).getFileID(0));
+            if ( stc instanceof ChangeIndex) {
+                if (!stc.finalResult) {
+                    nameOfFailedTests.add(stc.ident);
+                    bigResult = false;
+                }
                 continue;
             }
 

@@ -31,6 +31,7 @@ public class PutFileTest extends SuperTestCommand {
             }
         } catch (RequestException e) {
             if (super.expectedResult) ErrorLogger.log(e);
+//            System.out.println(CommandTester.conn.getResponseCode() + " , " + CommandTester.conn.getResponseBody());
         }
     }
 }

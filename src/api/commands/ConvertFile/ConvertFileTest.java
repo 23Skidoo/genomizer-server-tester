@@ -29,7 +29,7 @@ public class ConvertFileTest extends SuperTestCommand {
     @Override
     public void execute() {
         try {
-            CommandTester.conn.sendRequest(new ConvertFileRequest(ConvertTests.addedFile.getString(), format),
+            CommandTester.conn.sendRequest(new ConvertFileRequest(CommandTester.fileID.getString(), format),
                     CommandTester.token, Constants.JSON);
 
             if (CommandTester.conn.getResponseCode() == 200){

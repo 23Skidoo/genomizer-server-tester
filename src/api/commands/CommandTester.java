@@ -23,6 +23,8 @@ public class CommandTester {
     private String role;
     public static Connection conn;
 
+    public static StringContainer fileID;
+
     public static String EXP_NAME = "testExp1";
 
 
@@ -71,7 +73,7 @@ public class CommandTester {
             GenomeReleaseTests g = new GenomeReleaseTests();
             g.execute();
 
-            DeleteExperimentTest de = new DeleteExperimentTest("CLEANUP", CommandTester.EXP_NAME, true);
+            DeleteExperimentTest de = new DeleteExperimentTest("FINAL CLEANUP", CommandTester.EXP_NAME, true);
             de.execute();
 
             Debug.log(de.toString() , de.finalResult == de.expectedResult);

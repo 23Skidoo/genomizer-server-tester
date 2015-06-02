@@ -23,7 +23,10 @@ public class DeleteFileTest extends SuperTestCommand {
     @Override
     public void execute() {
         try {
-            CommandTester.conn.sendRequest(new RemoveFileFromExperimentRequest(file.getString()), CommandTester.token, Constants.TEXT_PLAIN);
+            if (file == null)
+            CommandTester.conn.sendRequest(new RemoveFileFromExperimentRequest(CommandTester.fileID.getString()), CommandTester.token, Constants.TEXT_PLAIN);
+            else
+                CommandTester.conn.sendRequest(new RemoveFileFromExperimentRequest(file.getString()), CommandTester.token, Constants.TEXT_PLAIN);
 
             if (CommandTester.conn.getResponseCode() == 200) {
                 super.finalResult = true;

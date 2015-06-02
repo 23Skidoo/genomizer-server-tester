@@ -28,7 +28,8 @@ public class GetFileTest extends SuperTestCommand {
     public void execute() {
 
         try {
-            CommandTester.conn.sendRequest(new DownloadFileRequest(FileTests.fileID.getString(), ""), CommandTester.token, Constants.TEXT_PLAIN);
+            CommandTester.conn.sendRequest(new DownloadFileRequest(CommandTester.fileID.getString(), ""),
+                    CommandTester.token, Constants.TEXT_PLAIN);
             if (CommandTester.conn.getResponseCode() == 200) {
                 super.finalResult = CommandTester.conn.getResponseBody().contains(expected);
             }

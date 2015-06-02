@@ -4,16 +4,13 @@ package api.commands;
 import api.commands.ConvertFile.ConvertFileTest;
 import api.commands.ConvertFile.GetConvertedFileTest;
 import api.commands.Experiment.GetExperimentTest;
-import api.commands.File.DeleteFileTest;
-import api.commands.File.FileTuple;
-import api.commands.File.PostFileTest;
+import api.commands.File.*;
 import model.Debug;
 
 /**
  * Created by c10mjn on 2015-05-27.
  */
 public class ConvertTests extends TestCollection{
-    public static StringContainer addedFile;
     public static StringContainer convertedFile;
 
     public ConvertTests() {
@@ -27,15 +24,15 @@ public class ConvertTests extends TestCollection{
         ft1.setType("profile");
         ft1.setGrVersion("hg38");
 
-        addedFile = new StringContainer("");
         convertedFile = new StringContainer("");
 
         super.commandList.add(new PostFileTest("POST CONVERT FILE", ft1, true));
-        super.commandList.add(new GetExperimentTest("GET FILE TO CONVERT", CommandTester.EXP_NAME, "", true));
+        super.commandList.add(new ChangeIndex("GET FILE TO CONVERT", CommandTester.EXP_NAME,0,-1, true));
         super.commandList.add(new ConvertFileTest("CONVERT FILE", "wig", true));
         super.commandList.add(new GetConvertedFileTest("GET CONVERT FILE", true));
-        super.commandList.add(new DeleteFileTest("CLEANUP", addedFile, true));
-        super.commandList.add(new DeleteFileTest("CLEANUP", convertedFile, true));
+        super.commandList.add(new ChangeIndex("GET FILE TO CONVERT", CommandTester.EXP_NAME,0,-1, true));
+        super.commandList.add(new DeleteFileTest("CLEANUP", null, true));
+        super.commandList.add(new DeleteFileTest("CLEANUP2", convertedFile, true));
     }
 
     @Override
@@ -45,9 +42,15 @@ public class ConvertTests extends TestCollection{
         boolean bigResult = true;
         for (SuperTestCommand stc : super.commandList) {
             stc.execute();
-            if (stc instanceof GetExperimentTest) {
-                this.addedFile.setString(((GetExperimentTest) stc).getFileID(0));
+
+            if ( stc instanceof ChangeIndex) {
+                if (!stc.finalResult) {
+                    nameOfFailedTests.add(stc.ident);
+                    bigResult = false;
+                }
+                continue;
             }
+
             runTests++;
 
             boolean succeeded = stc.finalResult == stc.expectedResult;
