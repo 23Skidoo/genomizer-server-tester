@@ -18,7 +18,7 @@ public class ExperimentTests extends TestCollection{
         AnnotationDataValue[] adv2 = {new AnnotationDataValue(null, "Sex", "Female")};
 
         AnnotationDataValue[] adv3 = {new AnnotationDataValue(null, "Species", "Fly"),
-                new AnnotationDataValue(null, "Sex", "male"),
+                new AnnotationDataValue(null, "Sex", "Male"),
                 new AnnotationDataValue(null, "Tissue", "")};
 
         AnnotationDataValue[] adv4 = {new AnnotationDataValue(null, "Species", "Fly"),
@@ -52,10 +52,10 @@ public class ExperimentTests extends TestCollection{
         super.commandList.add(new PostExperimentTest("POST WRONG ANNOTATION VALUE", "WrongAnnExp2", adv5, false));
         super.commandList.add(new GetExperimentTest("GET FAULTY EXPERIMENT VALUE", "WrongAnnExp2", "\"name\":\"WrongAnnExp2\"", false));
 
-        super.commandList.add(new PostExperimentTest("POST EXP TO DELETE", "DeleteTestExp", adv6, true));
-        super.commandList.add(new PostExperimentTest("POST EXISTING EXPERIMENT", "DeleteTestExp", adv6, false));
-        super.commandList.add(new DeleteExperimentTest("DELETE EXPERIMENT", "DeleteTestExp", true));
-        super.commandList.add(new DeleteExperimentTest("DELETE NONEXISTING EXPERIMENT", "DeleteTestExp", false));
+        super.commandList.add(new PostExperimentTest("POST EXP TO DELETE", "DeleteTestExp1", adv6, true));
+        super.commandList.add(new PostExperimentTest("POST EXISTING EXPERIMENT", "DeleteTestExp1", adv6, false));
+        super.commandList.add(new DeleteExperimentTest("DELETE EXPERIMENT", "DeleteTestExp1", true));
+        super.commandList.add(new DeleteExperimentTest("DELETE NONEXISTING EXPERIMENT", "DeleteTestExp1", false));
 
         super.commandList.add(new PostExperimentTest("POST EXP TO EDIT", "DeleteTestExp2", adv6, true));
         super.commandList.add(new PutExperimentTest("PUT EXPERIMENT TO EXTEND", "DeleteTestExp2", adv2, true));

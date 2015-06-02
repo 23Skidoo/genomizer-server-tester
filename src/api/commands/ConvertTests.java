@@ -46,7 +46,7 @@ public class ConvertTests extends TestCollection{
         for (SuperTestCommand stc : super.commandList) {
             stc.execute();
             if (stc instanceof GetExperimentTest) {
-                this.addedFile.setString(((GetExperimentTest) stc).getFileID());
+                this.addedFile.setString(((GetExperimentTest) stc).getFileID(0));
             }
             runTests++;
 
