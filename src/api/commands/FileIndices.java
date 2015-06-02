@@ -16,7 +16,7 @@ import java.util.ArrayList;
 public class FileIndices {
 
 
-    private static ArrayList<String> fileID;
+    private static ArrayList<String> fileID = new ArrayList<>();
 
     public FileIndices(String key){
 
@@ -39,7 +39,7 @@ public class FileIndices {
     }
 
 
-    public int getSize(){
+    public static int getSize(){
         return fileID.size();
     }
 

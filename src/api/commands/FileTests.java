@@ -1,7 +1,5 @@
 package api.commands;
 
-import api.commands.Experiment.GetExperimentTest;
-import api.commands.Experiment.PostExperimentTest;
 import api.commands.File.*;
 import model.Debug;
 
@@ -49,7 +47,7 @@ public class FileTests extends TestCollection {
         super.commandList.add(new ChangeIndex("CHANGE INDEX", CommandTester.EXP_NAME,0,1, true));
         super.commandList.add(new GetFileTest("GET FILE META F1", "f1", true));
 
-        //Put file doesn't seem to be working.
+        //Put file doesn't seem to be working at the moment.
 //        super.commandList.add(new PutFileTest("PUT FILE F2", ft2, "", true));
 //        super.commandList.add(new ChangeIndex("CHANGE INDEX", CommandTester.EXP_NAME,0,1, true));
 //        super.commandList.add(new GetFileTest("GET FILE META F2", "f2", true));

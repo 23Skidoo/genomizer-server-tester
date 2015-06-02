@@ -1,6 +1,8 @@
 package api.commands;
 
 import api.commands.Experiment.DeleteExperimentTest;
+import api.commands.File.ChangeIndex;
+import api.commands.File.DeleteFileTest;
 import api.commands.Login.LoginTest;
 import api.commands.Login.LogoutTest;
 import communication.Connection;
@@ -73,10 +75,16 @@ public class CommandTester {
             GenomeReleaseTests g = new GenomeReleaseTests();
             g.execute();
 
+            while(FileIndices.getSize() > 0) {
+                ChangeIndex ci = new ChangeIndex("CHANGE INDEX", CommandTester.EXP_NAME, 0, -1, true);
+                ci.execute();
+                DeleteFileTest df = new DeleteFileTest("DELETE FILE", null, false);
+                df.execute();
+            }
             DeleteExperimentTest de = new DeleteExperimentTest("FINAL CLEANUP", CommandTester.EXP_NAME, true);
             de.execute();
 
-            Debug.log(de.toString() , de.finalResult == de.expectedResult);
+            Debug.log(de.toString(), de.finalResult == de.expectedResult);
 
             new LogoutTest("DELETE LOGIN", true).execute();
 

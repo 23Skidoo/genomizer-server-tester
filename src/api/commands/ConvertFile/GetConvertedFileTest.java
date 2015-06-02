@@ -34,7 +34,7 @@ public class GetConvertedFileTest extends SuperTestCommand {
 
                 FileData data = gson.fromJson(CommandTester.conn.getResponseBody(), FileData.class);
 
-                if (ConvertTests.convertedFile.getString() != data.id) {
+                if (ConvertTests.convertedFile.getString().equals(data.id)) {
                     super.finalResult = true;
                 }
             }

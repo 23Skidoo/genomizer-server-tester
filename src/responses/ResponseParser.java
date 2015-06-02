@@ -2,10 +2,7 @@ package responses;
 
 import model.ErrorLogger;
 import responses.sysadmin.AddGenomeReleaseResponse;
-import util.AnnotationDataType;
-import util.ExperimentData;
-import util.GenomeReleaseData;
-import util.ProcessFeedbackData;
+import util.*;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonParseException;
@@ -45,6 +42,17 @@ public class ResponseParser {
             return null;
         }
         return searchResponses;
+    }
+
+    public static UserList parseUserList(String json) {
+        UserList userList;
+        try {
+            userList = gson.fromJson(json, UserList.class);
+        } catch (JsonParseException e) {
+            ErrorLogger.log(e);
+            return null;
+        }
+        return userList;
     }
 
     public static AnnotationDataType[] parseGetAnnotationResponse(String json) {

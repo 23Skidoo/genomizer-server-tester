@@ -32,7 +32,8 @@ public class ConvertTests extends TestCollection{
         super.commandList.add(new GetConvertedFileTest("GET CONVERT FILE", true));
         super.commandList.add(new ChangeIndex("GET FILE TO CONVERT", CommandTester.EXP_NAME,0,-1, true));
         super.commandList.add(new DeleteFileTest("CLEANUP", null, true));
-        super.commandList.add(new DeleteFileTest("CLEANUP2", convertedFile, true));
+        super.commandList.add(new ChangeIndex("GET FILE TO CONVERT", CommandTester.EXP_NAME,0,-1, true));
+        super.commandList.add(new DeleteFileTest("CLEANUP2", null, true));
     }
 
     @Override
