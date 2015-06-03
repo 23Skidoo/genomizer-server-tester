@@ -5,8 +5,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
+import java.net.HttpURLConnection;
 import java.net.URL;
-import javax.net.ssl.HttpsURLConnection;
+import java.net.URLConnection;
 
 import api.commands.CommandTester;
 
@@ -28,8 +29,8 @@ public class Connection {
     private static final int CONNECTION_TIMEOUT_MS = 3000;
 
 
-    /** The IP-adress to the Server */
-    private String ip;
+    /** The address of the Server */
+    private String url;
 
     // TODO: skapa konstanter f�r response/status-code?
     /** HTML status code */
@@ -38,20 +39,20 @@ public class Connection {
     /** The response message of a request */
     private String responseBody;
 
-    private HttpsURLConnection connection;
+    private HttpURLConnection connection;
 
     /**
      * Constructs a new Connection object to a server with a given IP address,
      * and a given GUI.
-     * @param ip The IP address
+     * @param url Server's address
      */
-    public Connection(String ip) {
+    public Connection(String url) {
 
-        if(!ip.startsWith("https://")) {
-            ip = "https://" + ip;
+        if(!url.startsWith("https://") && !url.startsWith("http://")) {
+            url = "https://" + url;
         }
 
-        this.ip = ip;
+        this.url = url;
         responseBody = "";
         responseCode = 0;
     }
@@ -115,10 +116,10 @@ public class Connection {
     private void connect(Request request, String token, String type)
             throws IOException {
 
-        URL url = new URL(ip + request.url);
+        URL url = new URL(this.url + request.url);
 
 
-        connection = (HttpsURLConnection) url.openConnection();
+        connection = (HttpURLConnection) url.openConnection();
 
 
         if (type.equals("application/json")) {
