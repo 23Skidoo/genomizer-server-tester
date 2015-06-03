@@ -69,9 +69,12 @@ public class HTTPURLUpload {
 
         // Ignore differences between given hostname and certificate hostname
 
-        HttpClientBuilder hcBuilder = HttpClients.custom()
-                .setSslcontext(SSLTool.getSslContext())
-                .setHostnameVerifier(SSLTool.getHostnameVerifier());
+        HttpClientBuilder hcBuilder = HttpClients.custom();
+
+        if (uploadPath.startsWith("https://")) {
+            hcBuilder.setSslcontext(SSLTool.getSslContext())
+                    .setHostnameVerifier(SSLTool.getHostnameVerifier());
+        }
 
         CloseableHttpClient httpClient = hcBuilder.build();
 

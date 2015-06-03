@@ -1,10 +1,9 @@
 package communication;
 
 import java.io.*;
+import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
-
-import javax.net.ssl.HttpsURLConnection;
 
 import util.RequestException;
 
@@ -20,14 +19,14 @@ import model.ErrorLogger;
  */
 public class DownloadHandler {
 
-    private HttpsURLConnection conn;
+    private HttpURLConnection conn;
     private String userID;
     private String fileName;
     private boolean finished;
     private int totalDownload;
     private int perSecond;
 
-    // TODO: userID = användarnamn? varför behövs den här?
+    // TODO: userID = anvï¿½ndarnamn? varfï¿½r behï¿½vs den hï¿½r?
     /**
      * Constructs a new DownloadHandler object with a given user ID and
      * filename.
@@ -42,7 +41,7 @@ public class DownloadHandler {
         this.fileName = fileName;
     }
 
-    // TODO: returvärdet används aldrig.
+    // TODO: returvï¿½rdet anvï¿½nds aldrig.
     /**
      * Downloads a file from a given URL, to a given local file path
      *
@@ -61,7 +60,7 @@ public class DownloadHandler {
 
             URL targetUrl = new URL(url);
 
-            conn = (HttpsURLConnection) targetUrl.openConnection();
+            conn = (HttpURLConnection) targetUrl.openConnection();
             conn.setRequestMethod("GET");
             conn.setRequestProperty("Content-Type", "text/plain");
             conn.setRequestProperty("Authorization", userID);
@@ -154,7 +153,7 @@ public class DownloadHandler {
         return -1;
     }
 
-    // TODO: Fixa namnet? borde vara private (används bara i denna klass)?
+    // TODO: Fixa namnet? borde vara private (anvï¿½nds bara i denna klass)?
     /**
      * Checks if the requested file to download is "binary"
      *
