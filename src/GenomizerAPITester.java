@@ -1,7 +1,10 @@
 import api.commands.CommandTester;
+import api.commands.TestCollection;
 import communication.Connection;
 import communication.ConnectionFactory;
 import communication.SSLTool;
+
+import static api.commands.TestCollection.*;
 
 /**
  * Main class for the test program.
@@ -33,5 +36,7 @@ public class GenomizerAPITester {
         Connection c = cf.makeConnection();
         new CommandTester(c);
         //Do sequential testing
+
+        System.exit(failedTests);
     }
 }
