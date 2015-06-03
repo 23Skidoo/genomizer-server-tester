@@ -1,28 +1,28 @@
 package util;
 
 /**
- * A class containing constants for runTests purposes
+ * A class containing constants for the tests.
  *
- *
- * @author oi12pjn & oi12mlw
+ * @author c10mjn, ens11afk, c12slm
+ * @version 1.0
+ * 03 June 2015
  *
  */
 public class Constants {
+
     /**
      * default username
      */
     public static final String userName = "yuri";
+
     /**
      * default password
      */
     public static final String password = "baguette";
-    //public static final String password = "";
+
     /**
-     * default server address
+     * Json parameters
      */
-    //public static final String serverAddress = "static.cs.umu.se:7000";
-    public static final String serverAddress = "130.239.192.110:443/api";
-    // Alternative: testuser: runTests: 213.21.81.248:7000
     public static final String TEXT_PLAIN = "text/plain";
     public static final String JSON = "application/json";
 }

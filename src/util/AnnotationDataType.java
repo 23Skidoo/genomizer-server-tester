@@ -1,5 +1,13 @@
 package util;
 
+/**
+ * Contains the annotation values and the appropriate getters and setters.
+ *
+ * @author c10mjn, ens11afk, c12slm
+ * @version 1.0
+ * 03 June 2015
+ *
+ */
 public class AnnotationDataType extends AnnotationData {
 
     public String[] values;

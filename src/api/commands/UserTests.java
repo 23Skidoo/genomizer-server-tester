@@ -5,6 +5,7 @@ import api.commands.User.PutUserTest;
 import api.commands.Login.LoginTest;
 import api.commands.Login.LogoutTest;
 import model.Debug;
+import util.Constants;
 
 /**
  * Tests for the user commands.
@@ -29,7 +30,7 @@ public class UserTests extends TestCollection {
         super.commandList.add(new LogoutTest("LOG OUT NEW USER", true));
         super.commandList.add(new LoginTest("LOG IN UPDATED USER", "tempuser1", "pass2", true));
         super.commandList.add(new LogoutTest("LOG OUT UPDATED USER", true));
-        super.commandList.add(new LoginTest("LOG IN STANDARD USER", "yuri", "baguette", true));
+        super.commandList.add(new LoginTest("LOG IN STANDARD USER", Constants.userName, Constants.password, true));
         super.commandList.add(new DeleteAdminUserTest("DELETE NEW ADMIN USER", "tempuser1", true));
     }
     @Override

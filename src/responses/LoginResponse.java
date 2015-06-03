@@ -2,6 +2,14 @@ package responses;
 
 import com.google.gson.annotations.Expose;
 
+/**
+ * Response for the log in attempts.
+ *
+ * @author c10mjn, ens11afk, c12slm
+ * @version 1.0
+ * 03 June 2015
+ *
+ */
 public class LoginResponse extends Response {
 
     @Expose

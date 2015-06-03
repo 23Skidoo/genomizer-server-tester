@@ -1,11 +1,11 @@
 package requests;
 
 /**
- * This class represents a "Retrieve an experiment" request in an application
- * for genome researchers. This request adds a experiment to the database of the
- * application.
+ * Request for retrieving experiments.
  *
- * @author
+ * @author c10mjn, ens11afk, c12slm
+ * @version 1.0
+ * 03 June 2015
  *
  */
 public class RetrieveExperimentRequest extends Request {

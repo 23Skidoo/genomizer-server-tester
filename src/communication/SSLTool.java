@@ -19,6 +19,9 @@ import java.security.cert.X509Certificate;
  *
  * Alternative solution would be to download and add the cert manually,
  * using *keytool*.
+ *
+ * @version 1.0
+ * 03 June 2015
  */
 public class SSLTool {
 

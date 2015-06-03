@@ -22,7 +22,8 @@ public class GenomizerAPITester {
 
         // path to server
         if (args.length != 1) {
-            System.err.println("Start with path to server and experiment name.");
+            System.err.println("Address for server to run on is missing. \n" +
+                    "Aborting...");
             System.exit(-1);
         }
         ConnectionFactory cf = new ConnectionFactory();

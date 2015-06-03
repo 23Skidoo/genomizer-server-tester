@@ -1,19 +1,18 @@
 package requests;
 /**
- * This class represents a request to cancel a running process
- * @author JH
+ * Request for canceling a process.
+ *
+ * @author c10mjn, ens11afk, c12slm
+ * @version 1.0
+ * 03 June 2015
  *
  */
 public class CancelProcessRequest extends Request {
-    /**
-     * Attributes needed to create the request.
-     *
-     */
+
     public String PID;
     /**
      * A constructor creating the request
-     * @param PID
-     *          Process-ID
+     * @param PID Process-ID
      */
     public CancelProcessRequest(String PID) {
         super("cancelprocess","/process/cancelprocess" , "PUT");

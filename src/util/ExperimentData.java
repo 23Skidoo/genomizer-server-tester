@@ -3,13 +3,20 @@ package util;
 import java.util.ArrayList;
 
 /**
- * Class representing experiment data
+ * Class representing experiment data.
+ *
+ * @author c10mjn, ens11afk, c12slm
+ * @version 1.0
+ * 03 June 2015
+ *
  */
 public class ExperimentData {
 
     public String name;
     public ArrayList<FileData> files;
     public ArrayList<AnnotationDataValue> annotations;
+
+
     public ExperimentData() {
 
     }

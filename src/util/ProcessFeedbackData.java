@@ -2,8 +2,9 @@ package util;
 
 
 /**
- * @author 1337H4xx0r
- * Created by c11dkn on 2014-05-16.
+ * @author c11dkn
+ * @version 1.0
+ * 16 May 2014
  */
 public class ProcessFeedbackData {
 

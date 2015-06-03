@@ -7,6 +7,7 @@ import api.commands.Admin.PutAdminUserTest;
 import api.commands.Login.LoginTest;
 import api.commands.Login.LogoutTest;
 import model.Debug;
+import util.Constants;
 
 /**
  * Class which contains all the tests for the admin commands.
@@ -43,7 +44,7 @@ public class AdminTests extends TestCollection{
         super.commandList.add(new PutAdminUserTest("LOWER ADMIN USER", "tempuser1", "pass1","GUEST","name", "mail_no@gmail.com", false));
         super.commandList.add(new PutAdminUserTest("ADMIN TO ADMIN", "tempuser1", "pass1","ADMIN","name", "mail_no@gmail.com", true));
         super.commandList.add(new LogoutTest("LOG OUT NEW USER", true));
-        super.commandList.add(new LoginTest("LOG IN STANDARD USER", "yuri", "baguette", true));
+        super.commandList.add(new LoginTest("LOG IN STANDARD USER", Constants.userName, Constants.password, true));
         super.commandList.add(new DeleteAdminUserTest("CLEANUP","tempuser1", true));
     }
 

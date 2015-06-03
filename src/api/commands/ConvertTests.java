@@ -5,6 +5,7 @@ import api.commands.ConvertFile.ConvertFileTest;
 import api.commands.ConvertFile.GetConvertedFileTest;
 import api.commands.File.*;
 import model.Debug;
+import util.Constants;
 import util.StringContainer;
 
 /**
@@ -27,7 +28,7 @@ public class ConvertTests extends TestCollection{
         FileTuple ft1 = new FileTuple();
         ft1.setId(CommandTester.EXP_NAME);
         ft1.setName("test.sgr");
-        ft1.setAuthor("yuri");
+        ft1.setAuthor(Constants.userName);
         ft1.setMetaData("default");
         ft1.setType("profile");
         ft1.setGrVersion("MultiFileTest");

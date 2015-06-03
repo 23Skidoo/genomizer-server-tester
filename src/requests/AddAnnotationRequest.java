@@ -1,5 +1,13 @@
 package requests;
 
+/**
+ * Request for adding new annotations.
+ *
+ * @author c10mjn, ens11afk, c12slm
+ * @version 1.0
+ * 03 June 2015
+ *
+ */
 public class AddAnnotationRequest extends Request {
 
     public String name;

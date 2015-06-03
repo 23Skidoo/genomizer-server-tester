@@ -1,5 +1,6 @@
 package responses;
 
+
 public class DownloadFileResponse extends Response {
     public String experimentID;
     public String fileName;

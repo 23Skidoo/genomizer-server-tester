@@ -1,11 +1,12 @@
 package communication;
 
-
-// TODO: Helt on�dig och fel. F�ljer inte pattern. Ta bort?
-// ehh, runTests
 /**
+ * Creates the connections used by the program.
  *
- * Created by c11dkn on 2014-05-16.
+ * @author c11 dkn
+ * @version 1.0
+ * 16 May 2015
+ *
  */
 public class ConnectionFactory {
 

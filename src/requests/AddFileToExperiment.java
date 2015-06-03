@@ -6,14 +6,11 @@ package requests;
  * in the database of the application.
  *
  * @author worfox
- * @date 2014-04-25.
+ * 25 April 2014
  */
 
 public class AddFileToExperiment extends Request {
-    /**
-     * Attributes needed to create the experiment.
-     *
-     */
+
     public String experimentID;
     public String fileName;
     public String type;
@@ -26,26 +23,19 @@ public class AddFileToExperiment extends Request {
     /**
      * Constructor creating the experiment.
      *
-     * @param experimentId
-     *            String representing the experiment id.
-     * @param fileName
-     *            String representing the file name.
-     * @param fileType
-     *            String representing the type of the file.
-     * @param metaData
-     *            String representing meta data.
-     * @param author
-     *            String representing the author of the file.
-     * @param uploader
-     *            String representing who uploaded the file.
-     * @param isPrivate
-     *            boolean representing if the file should be private.
-     * @param grVersion
-     *            String representing the genome version of the file.
+     * @param experimentId String representing the experiment id.
+     * @param fileName String representing the file name.
+     * @param fileType String representing the type of the file.
+     * @param metaData String representing meta data.
+     * @param author String representing the author of the file.
+     * @param uploader String representing who uploaded the file.
+     * @param isPrivate boolean representing if the file should be private.
+     * @param grVersion String representing the genome version of the file.
      */
     public AddFileToExperiment(String experimentId, String fileName,
             String fileType, String metaData, String author, String uploader,
             boolean isPrivate, String grVersion) {
+
         super("addfile", "/file", "POST");
         this.experimentID = experimentId;
         this.fileName = fileName;

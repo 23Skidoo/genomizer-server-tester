@@ -6,7 +6,8 @@ package requests;
  * in the database of the application.
  *
  * @author worfox
- * @date 2014-04-25.
+ * @version 1.0
+ * 25 April 2014
  */
 
 public class RemoveFileFromExperimentRequest extends Request {

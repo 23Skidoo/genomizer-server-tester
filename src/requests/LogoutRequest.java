@@ -1,11 +1,11 @@
 package requests;
 
 /**
- * A class representing a "Logout from the server" request in an application for
- * genome researchers. This request logs the user out of the server.
+ * Request for logging out.
  *
- *
- * @author
+ * @author c10mjn, ens11afk, c12slm
+ * @version 1.0
+ * 03 June 2015
  *
  */
 public class LogoutRequest extends Request {

@@ -3,36 +3,30 @@ package requests;
 import util.AnnotationDataValue;
 
 /**
- * This class represents a "Add an experiment" request in an application for
- * genome researchers. This request adds a experiment to the database of the
- * application.
+ * Request for editing experiments.
  *
- * @author
+ * @author c10mjn, ens11afk, c12slm
+ * @version 1.0
+ * 03 June 2015
  *
  */
 public class ChangeExperimentRequest extends Request {
-    /**
-     * Attributes needed for the request.
-     *
-     */
+
     public String name;
     public AnnotationDataValue[] annotations;
 
     /**
      * Constructor creating the request. Removes the annotations without
-     * any value
-     *
-     * @param experimentName
-     *            String representing the name of the experiment.
-     * @param annotations
-     *            An array representing the annotations assigned to the
+     * any value.
+     * @param experimentName String representing the name of the experiment.
+     * @param annotations An array representing the annotations assigned to the
      *            experiment.
      */
     public ChangeExperimentRequest(String experimentName,
             AnnotationDataValue[] annotations) {
         super("addexperiment", "/experiment/"+experimentName, "PUT");
         this.name = experimentName;
-        //this.annotations = annotations;
+
         int i = 0;
         for(AnnotationDataValue a: annotations) {
             if(a.value.isEmpty()) {

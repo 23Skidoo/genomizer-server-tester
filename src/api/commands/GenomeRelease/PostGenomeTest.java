@@ -8,7 +8,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import model.ErrorLogger;
 import requests.AddGenomeReleaseRequest;
-import responses.sysadmin.AddGenomeReleaseResponse;
+import responses.AddGenomeReleaseResponse;
 import util.Constants;
 import util.RequestException;
 

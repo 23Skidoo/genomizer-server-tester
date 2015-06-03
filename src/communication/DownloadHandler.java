@@ -14,7 +14,9 @@ import model.ErrorLogger;
 /**
  * Class for handling file downloads.
  *
- * Created by Christoffer on 2014-04-30.
+ * @author Christoffer
+ * @version 1.0
+ * 30 April 2014
  */
 public class DownloadHandler {
 

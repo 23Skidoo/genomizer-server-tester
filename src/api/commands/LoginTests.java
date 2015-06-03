@@ -3,6 +3,7 @@ package api.commands;
 import api.commands.Login.LoginTest;
 import api.commands.Login.LogoutTest;
 import model.Debug;
+import util.Constants;
 
 /**
  * Class containing the tests for the log in and logout commands.
@@ -20,18 +21,18 @@ public class LoginTests extends TestCollection{
     public LoginTests(){
         super();
 
-        super.commandList.add(new LoginTest("USER LOGIN", "yuri", "baguette", true));
+        super.commandList.add(new LoginTest("USER LOGIN", Constants.userName, Constants.password, true));
         super.commandList.add(new LogoutTest("USER LOGOUT", true));
         super.commandList.add(new LogoutTest("USER LOGOUT NOT LOGGED IN", false));
 
-        super.commandList.add(new LoginTest("BAD USERNAME LOGIN", "BLA", "baguette", false));
-        super.commandList.add(new LoginTest("BAD PASSWORD LOGIN", "yuri", "BLA", false));
+        super.commandList.add(new LoginTest("BAD USERNAME LOGIN", "BLA", Constants.password, false));
+        super.commandList.add(new LoginTest("BAD PASSWORD LOGIN", Constants.userName, "BLA", false));
 
-        super.commandList.add(new LoginTest("NO  USERNAME LOGIN", "", "baguette", false));
-        super.commandList.add(new LoginTest("NO  PASSWORD LOGIN", "yuri", "", false));
+        super.commandList.add(new LoginTest("NO  USERNAME LOGIN", "", Constants.password, false));
+        super.commandList.add(new LoginTest("NO  PASSWORD LOGIN", Constants.userName, "", false));
 
-        super.commandList.add(new LoginTest("GARBAGE USERNAME LOGIN", garbage, "baguette", false));
-        super.commandList.add(new LoginTest("GARBAGE PASSWORD LOGIN", "yuri", garbage, false));
+        super.commandList.add(new LoginTest("GARBAGE USERNAME LOGIN", garbage, Constants.password, false));
+        super.commandList.add(new LoginTest("GARBAGE PASSWORD LOGIN", Constants.userName, garbage, false));
     }
 
     @Override

@@ -20,6 +20,8 @@ import java.net.URLEncoder;
 /**
  * Class for handling file uploads.
  *
+ * @version 1.0
+ * 03 June 2015
  */
 public class HTTPURLUpload {
 

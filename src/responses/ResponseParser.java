@@ -1,12 +1,20 @@
 package responses;
 
 import model.ErrorLogger;
-import responses.sysadmin.AddGenomeReleaseResponse;
 import util.*;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonParseException;
 
+/**
+ * Parses the different responses.
+ * Add the new classes here if they have a different format.
+ *
+ * @author c10mjn, ens11afk, c12slm
+ * @version 1.0
+ * 03 June 2015
+ *
+ */
 public class ResponseParser {
 
     private static Gson gson = new Gson();

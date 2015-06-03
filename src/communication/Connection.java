@@ -14,10 +14,11 @@ import requests.Request;
 import util.RequestException;
 
 /**
- * Class representing a connection to a server (fast egentligen inte), and the
+ * Class representing a connection to a server and the
  * communication between server-client
  *
- * @author
+ * @author Desktop
+ * @version 1.0
  *
  */
 public class Connection {
@@ -41,10 +42,8 @@ public class Connection {
 
     /**
      * Constructs a new Connection object to a server with a given IP address,
-     * and a given GUI
-     *
-     * @param ip
-     *            the IP address
+     * and a given GUI.
+     * @param ip The IP address
      */
     public Connection(String ip) {
 
@@ -60,19 +59,16 @@ public class Connection {
     /**
      * Sends a REST-request to the connected server and processes the response.
      *
-     * @param request
-     *            the request to be sent
-     * @param token
-     *            a unique identifier of the user
-     * @param type
-     *            the type of request (JSON or PLAIN_TEXT)
-     * @throws RequestException
-     *             if an error occurs (i.e HTTP response code is > 201)
+     * @param request The request to be sent
+     * @param token A unique identifier of the user
+     * @param type The type of request (JSON or PLAIN_TEXT)
+     * @throws RequestException if an error occurs
+     *              (i.e HTTP response code is > 201)
      */
     public void sendRequest(Request request, String token, String type)
             throws RequestException {
         try {
-            //System.out.println(request.requestType + " " + request.url);
+
             connect(request, token, type);
 
             if (type.equals("application/json")) {
@@ -86,13 +82,13 @@ public class Connection {
             fetchResponse(connection.getInputStream());
 
             if (responseCode >= 300) {
-                //ErrorLogger.log(responseBody);
+
                 connection.disconnect();
                 throw new RequestException(responseCode, responseBody);
             }
             connection.disconnect();
         } catch (IOException e) {
-            //ErrorLogger.log(e);
+
             if(responseCode > 200){
                 throw new RequestException(responseCode, responseBody + " - message: " + e.getMessage());
             }
@@ -108,7 +104,7 @@ public class Connection {
                     }
                 }
             } catch (IOException e1) {
-                //ErrorLogger.log(e1);
+
                 connection.disconnect();
                 throw new RequestException(responseCode, responseBody);
             }
@@ -163,7 +159,7 @@ public class Connection {
     /**
      * Returns the response code of a request
      *
-     * @return the response code
+     * @return The response code
      */
     public int getResponseCode() {
         return responseCode;
@@ -172,16 +168,12 @@ public class Connection {
     /**
      * Returns the response body of a request
      *
-     * @return the response body
+     * @return The response body
      */
     public String getResponseBody() {
         return responseBody;
     }
 
-    // TODO: unused? ta bort?
-    public void checkType(String output) {
-
-    }
 
 }
 

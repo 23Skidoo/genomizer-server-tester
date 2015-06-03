@@ -8,6 +8,7 @@ import api.commands.Login.LoginTest;
 import api.commands.Login.LogoutTest;
 import communication.Connection;
 import model.Debug;
+import util.Constants;
 import util.FileIndices;
 import util.StringContainer;
 
@@ -37,7 +38,7 @@ public class CommandTester {
             LoginTests lt = new LoginTests();
             lt.execute();
 
-            new LoginTest("POST LOGIN", "yuri", "baguette", true).execute();
+            new LoginTest("POST LOGIN", Constants.userName, Constants.password, true).execute();
 
             //GENOME HANDLING (POST, PUT, DELETE, GET)
             GenomeReleaseTests g = new GenomeReleaseTests();

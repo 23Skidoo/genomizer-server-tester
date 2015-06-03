@@ -3,29 +3,24 @@ package requests;
 import util.AnnotationDataValue;
 
 /**
- * This class represents a "Add an experiment" request in an application for
- * genome researchers. This request adds a experiment to the database of the
- * application.
+ * Request for adding a new experiment.
  *
- * @author
+ * @author c10mjn, ens11afk, c12slm
+ * @version 1.0
+ * 03 June 2015
  *
  */
 public class AddExperimentRequest extends Request {
-    /**
-     * Attributes needed for the request.
-     *
-     */
+
     public String name;
     public AnnotationDataValue[] annotations;
 
     /**
      * Constructor creating the request. Removes the annotations without
-     * any value
+     * any value.
      *
-     * @param experimentName
-     *            String representing the name of the experiment.
-     * @param annotations
-     *            An array representing the annotations assigned to the
+     * @param experimentName String representing the name of the experiment.
+     * @param annotations An array representing the annotations assigned to the
      *            experiment.
      */
     public AddExperimentRequest(String experimentName,
@@ -39,6 +34,7 @@ public class AddExperimentRequest extends Request {
                 i++;
             }
         }
+
         int j = 0;
         this.annotations = new AnnotationDataValue[annotations.length-i];
         for(AnnotationDataValue a: annotations) {

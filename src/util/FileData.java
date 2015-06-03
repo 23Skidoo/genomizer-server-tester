@@ -1,5 +1,13 @@
 package util;
 
+/**
+ * Class containing the file information.
+ *
+ * @author c10mjn, ens11afk, c12slm
+ * @version 1.0
+ * 03 June 2015
+ *
+ */
 public class FileData {
     public String id;
     public String expId;
