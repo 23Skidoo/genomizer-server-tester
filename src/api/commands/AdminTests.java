@@ -33,9 +33,9 @@ public class AdminTests extends TestCollection{
         super.commandList.add(new LogoutTest("LOG OUT STANDARD USER", true));
         super.commandList.add(new LoginTest("LOG IN NEW USER", "tempuser1", "pass1", true));
         super.commandList.add(new PutAdminUserTest("LOWER ADMIN USER", "tempuser1", "pass1","GUEST","name", "mail_no@gmail.com", false));
-        super.commandList.add(new PutAdminUserTest("LOWER ADMIN USER", "tempuser1", "pass1","ADMIN","name", "mail_no@gmail.com", false));
+        super.commandList.add(new PutAdminUserTest("ADMIN TO ADMIN", "tempuser1", "pass1","ADMIN","name", "mail_no@gmail.com", true));
         super.commandList.add(new LogoutTest("LOG OUT NEW USER", true));
-        super.commandList.add(new LoginTest("LOG IN STANDARD USER", "testadmin", "baguette", true));
+        super.commandList.add(new LoginTest("LOG IN STANDARD USER", "yuri", "baguette", true));
         super.commandList.add(new DeleteAdminUserTest("CLEANUP","tempuser1", true));
     }
 

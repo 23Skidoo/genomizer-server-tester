@@ -13,10 +13,10 @@ public class SearchTests extends TestCollection {
     public SearchTests() {
         super();
 
-        super.commandList.add(new SearchTestExpID("SEARCH EXP ID", "Exp1[expID]", "\"name\": \"Exp1\",", true));
-        super.commandList.add(new SearchTestExpID("SEARCH MULTI", "Exp1[ExpID] Human[Species]", "\"name\": \"Exp1\",", true));
+        super.commandList.add(new SearchTestExpID("SEARCH EXP ID", "Exp1[expID]", "testExp1", true));
+        super.commandList.add(new SearchTestExpID("SEARCH MULTI", "Exp1[ExpID] Human[Species]", "testExp1", true));
         super.commandList.add(new SearchTestExpID("SEARCH INVALID", "OAJHG", "", false));
-        super.commandList.add(new SearchTestExpID("SEARCH EMPTY", "", "\"name\": \"Exp1\",", true));
+        super.commandList.add(new SearchTestExpID("SEARCH EMPTY", "", "testExp1", true));
     }
 
     @Override

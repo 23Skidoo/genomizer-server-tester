@@ -1,5 +1,6 @@
-package api.commands;
+package util;
 
+import api.commands.CommandTester;
 import model.ErrorLogger;
 import requests.RetrieveExperimentRequest;
 import responses.ResponseParser;

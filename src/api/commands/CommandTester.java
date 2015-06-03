@@ -3,18 +3,13 @@ package api.commands;
 import api.commands.Experiment.DeleteExperimentTest;
 import api.commands.File.ChangeIndex;
 import api.commands.File.DeleteFileTest;
+import api.commands.GenomeRelease.DeleteGenomeTest;
 import api.commands.Login.LoginTest;
 import api.commands.Login.LogoutTest;
 import communication.Connection;
 import model.Debug;
-import model.ErrorLogger;
-import requests.LoginRequest;
-import requests.LogoutRequest;
-import responses.LoginResponse;
-import responses.ResponseParser;
-import util.Constants;
-import util.RequestException;
-
+import util.FileIndices;
+import util.StringContainer;
 
 
 /**
@@ -37,7 +32,11 @@ public class CommandTester {
             LoginTests lt = new LoginTests();
             lt.execute();
 
-            new LoginTest("POST LOGIN", "testadmin", "baguette", true).execute();
+            new LoginTest("POST LOGIN", "yuri", "baguette", true).execute();
+
+            //GENOME HANDLING (POST, PUT, DELETE, GET)
+            GenomeReleaseTests g = new GenomeReleaseTests();
+            g.execute();
 
             //Test experiments (POST, GET, PUT, DELETE)
             ExperimentTests e = new ExperimentTests();
@@ -71,10 +70,8 @@ public class CommandTester {
             AnnotationTests a = new AnnotationTests();
             a.execute();
 
-            //GENOME HANDLING (POST, PUT, DELETE, GET)
-            GenomeReleaseTests g = new GenomeReleaseTests();
-            g.execute();
 
+            new DeleteGenomeTest("CLEANUP", "Human", "MultiFileTest", true).execute();
             while(FileIndices.getSize() > 0) {
                 ChangeIndex ci = new ChangeIndex("CHANGE INDEX", CommandTester.EXP_NAME, 0, -1, true);
                 ci.execute();

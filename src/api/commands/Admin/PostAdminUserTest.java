@@ -8,7 +8,12 @@ import util.Constants;
 import util.RequestException;
 
 /**
- * Created by ens11afk on 2015-05-28.
+ * Contains the command for creating users.
+ *
+ * @author c10mjn, ens11afk, c12slm
+ * @version 1.0
+ * 03 June 2015
+ *
  */
 public class PostAdminUserTest extends SuperTestCommand {
 

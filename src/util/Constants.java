@@ -11,7 +11,7 @@ public class Constants {
     /**
      * default username
      */
-    public static final String userName = "testuser";
+    public static final String userName = "yuri";
     /**
      * default password
      */

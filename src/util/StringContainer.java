@@ -1,4 +1,4 @@
-package api.commands;
+package util;
 
 /**
  * Created by c12slm on 2015-06-01.

@@ -3,9 +3,9 @@ package api.commands;
 
 import api.commands.ConvertFile.ConvertFileTest;
 import api.commands.ConvertFile.GetConvertedFileTest;
-import api.commands.Experiment.GetExperimentTest;
 import api.commands.File.*;
 import model.Debug;
+import util.StringContainer;
 
 /**
  * Created by c10mjn on 2015-05-27.
@@ -19,10 +19,10 @@ public class ConvertTests extends TestCollection{
         FileTuple ft1 = new FileTuple();
         ft1.setId(CommandTester.EXP_NAME);
         ft1.setName("test.sgr");
-        ft1.setAuthor("testuser");
+        ft1.setAuthor("yuri");
         ft1.setMetaData("default");
         ft1.setType("profile");
-        ft1.setGrVersion("hg38");
+        ft1.setGrVersion("MultiFileTest");
 
         convertedFile = new StringContainer("");
 

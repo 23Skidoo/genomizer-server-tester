@@ -1,8 +1,7 @@
 package api.commands.File;
 
 import api.commands.CommandTester;
-import api.commands.FileTests;
-import api.commands.StringContainer;
+import util.StringContainer;
 import api.commands.SuperTestCommand;
 import model.ErrorLogger;
 import requests.RemoveFileFromExperimentRequest;

@@ -28,7 +28,6 @@ public class GenomeReleaseTests extends TestCollection{
         super.commandList.add(new PostGenomeTest("POST GENOME NO SPECIE", new String[]{"File.whatever"}, "", "NoSpecieTest", false));
         super.commandList.add(new DeleteGenomeTest("DELETE UNUSED GENOME", "Fly", "SingleFileTest", true));
         super.commandList.add(new DeleteGenomeTest("DELETE USED GENOME", "Human", "hg38", false));
-        super.commandList.add(new DeleteGenomeTest("CLEANUP", "Human", "MultiFileTest", true));
         super.commandList.add(new GetAllGenomeTest("GET ALL GENOMES", "{\"genomeVersion\": \"SingleFileTest\",\"species\": \"Fly\",\"folderPath\": \"/var/www/data/genome_releases/Fly/SingleFileTest/\",\"files\": [\"File.whatever\"]}", false));
     }
 
