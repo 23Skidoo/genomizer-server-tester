@@ -18,7 +18,7 @@ import util.RequestException;
 public class GetSpecificGenomeTest extends SuperTestCommand {
 
     private String specie;
-    private String expected;
+    private String [] expected;
 
     /**
      * Defines the genome release to get and the expected String to find in the
@@ -28,7 +28,7 @@ public class GetSpecificGenomeTest extends SuperTestCommand {
      * @param expected
      * @param expectedResult
      */
-    public GetSpecificGenomeTest(String ident, String specie, String expected, boolean expectedResult) {
+    public GetSpecificGenomeTest(String ident, String specie, String [] expected, boolean expectedResult) {
         super(ident, expectedResult);
         this.specie = specie;
         this.expected = expected;
@@ -41,7 +41,9 @@ public class GetSpecificGenomeTest extends SuperTestCommand {
                     CommandTester.token, Constants.TEXT_PLAIN);
 
             if (CommandTester.conn.getResponseCode() == 200) {
-                super.finalResult = CommandTester.conn.getResponseBody().contains(expected);
+                String respBody = CommandTester.conn.getResponseBody();
+                for (String expectedStr : expected)
+                    super.finalResult = respBody.contains(expectedStr);
             }
         } catch (RequestException e) {
             if (super.expectedResult) ErrorLogger.log(e);
