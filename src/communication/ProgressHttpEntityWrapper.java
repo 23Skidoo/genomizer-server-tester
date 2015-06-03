@@ -8,9 +8,13 @@ import java.io.IOException;
 import java.io.OutputStream;
 
 /**
- * Created by dv12csr on 2014-05-16.
+ * Class which is used to send the http entities.
+ *
+ * @author dv12csr
+ * @version 1.0
+ * 16 May 2014
+ *
  */
-
 class ProgressHttpEntityWrapper extends HttpEntityWrapper {
     
     private final ProgressCallback progressCallback;

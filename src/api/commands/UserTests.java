@@ -1,15 +1,24 @@
 package api.commands;
 import api.commands.Admin.DeleteAdminUserTest;
 import api.commands.Admin.PostAdminUserTest;
-import api.commands.Admin.PutUserTest;
+import api.commands.User.PutUserTest;
 import api.commands.Login.LoginTest;
 import api.commands.Login.LogoutTest;
 import model.Debug;
 
 /**
- * Created by c10mjn on 2015-05-27.
+ * Tests for the user commands.
+ *
+ * @author c10mjn, ens11afk, c12slm
+ * @version 1.0
+ * 03 June 2015
+ *
  */
 public class UserTests extends TestCollection {
+
+    /**
+     * Creates the user commands to test.
+     */
     public UserTests(){
         super();
         super.commandList.add(new PostAdminUserTest("POST NEW ADMIN USER", "tempuser1","pass1", "ADMIN", "name", "mail_no@gmail.com", true));
@@ -25,12 +34,15 @@ public class UserTests extends TestCollection {
     }
     @Override
     public boolean execute() {
+
         System.out.println("\n----------------------USER-----------------------");
         boolean bigResult = true;
+
         for (SuperTestCommand stc: super.commandList) {
             stc.execute();
             runTests++;
             boolean succeeded = stc.finalResult == stc.expectedResult;
+
             if (succeeded){
                 succeededTests++;
             } else {
@@ -38,7 +50,9 @@ public class UserTests extends TestCollection {
                 nameOfFailedTests.add(stc.ident);
                 bigResult = false;
             }
+
             Debug.log(stc.toString(), succeeded);
+
             try {
                 Thread.sleep(delay);
             } catch (InterruptedException e) {

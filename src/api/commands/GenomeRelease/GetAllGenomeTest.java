@@ -4,16 +4,26 @@ import api.commands.CommandTester;
 import api.commands.SuperTestCommand;
 import model.ErrorLogger;
 import requests.GetGenomeReleasesRequest;
-import requests.RetrieveExperimentRequest;
 import util.Constants;
 import util.RequestException;
 
 /**
- * Created by c10mjn on 2015-05-26.
+ * Command to get all the genome releases.
+ *
+ * @author c10mjn, ens11afk, c12slm
+ * @version 1.0
+ * 03 June 2015
+ *
  */
 public class GetAllGenomeTest extends SuperTestCommand {
     private String expected;
 
+    /**
+     * Sets the expected String to find in the get.
+     * @param ident
+     * @param expected
+     * @param expectedResult
+     */
     public GetAllGenomeTest(String ident, String expected, boolean expectedResult) {
 
         super(ident, expectedResult);

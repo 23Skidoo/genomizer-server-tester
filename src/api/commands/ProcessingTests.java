@@ -1,7 +1,9 @@
 package api.commands;
 
 /**
- * Created by c10mjn on 2015-05-27.
+ * Contains the processing tests.
+ * Might not be possible to test using this program.
  */
 public class ProcessingTests {
+
 }

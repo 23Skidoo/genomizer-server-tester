@@ -2,18 +2,22 @@ import api.commands.CommandTester;
 import communication.Connection;
 import communication.ConnectionFactory;
 import communication.SSLTool;
-import model.ErrorLogger;
-import requests.LoginRequest;
-import requests.LogoutRequest;
-import responses.LoginResponse;
-import responses.ResponseParser;
-import util.RequestException;
 
 /**
- * Created by c10mjn on 2015-05-25.
+ * Main class for the test program.
+ *
+ * @author c10mjn, ens11afk, c12slm
+ * @version 1.0
+ * 03 June 2015
+ *
  */
 public class GenomizerAPITester {
+
     public static String token;
+
+    /**
+     * MAIN
+     */
     public static void main(String[] args){
 
         // path to server

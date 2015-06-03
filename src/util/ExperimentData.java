@@ -1,9 +1,6 @@
 package util;
 
 import java.util.ArrayList;
-import java.util.Random;
-
-import com.google.gson.Gson;
 
 /**
  * Class representing experiment data
@@ -35,7 +32,7 @@ public class ExperimentData {
      * @return
      */
     public ArrayList<String> getAnnotationValueList(ArrayList<String> headings) {
-        ArrayList<String> annotationList = new ArrayList<String>();
+        ArrayList<String> annotationList = new ArrayList<>();
 
         for (String heading : headings) {
             boolean hasValue = false;

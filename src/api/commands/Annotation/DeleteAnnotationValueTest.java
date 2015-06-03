@@ -3,19 +3,30 @@ package api.commands.Annotation;
 import api.commands.CommandTester;
 import api.commands.SuperTestCommand;
 import model.ErrorLogger;
-import requests.RemoveAnnotationFieldRequest;
 import requests.RemoveAnnotationValueRequest;
-import requests.RemoveGenomeReleaseRequest;
 import util.Constants;
 import util.RequestException;
 
 /**
- * Created by c10mjn on 2015-05-26.
+ * Test for deleting an annotation value.
+ *
+ * @author c10mjn, ens11afk, c12slm
+ * @version 1.0
+ * 03 June 2015
+ *
  */
 public class DeleteAnnotationValueTest extends SuperTestCommand {
+
     private String name;
     private String value;
 
+    /**
+     * Defins the annotation value to delete.
+     * @param ident
+     * @param name
+     * @param value
+     * @param expectedResult
+     */
     public DeleteAnnotationValueTest(String ident, String name, String value, boolean expectedResult) {
         super(ident, expectedResult);
         this.name = name;

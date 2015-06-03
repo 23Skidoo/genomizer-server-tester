@@ -1,10 +1,12 @@
 package requests;
 
 /**
- * This class contains info for adding files to an experiment from the geo database
- * 
- * @date 14-05-20
- * 
+ * Request for adding files to an experiment from the geo
+ * database.
+ *
+ * @author c10mjn, ens11afk, c12slm
+ * @version 1.0
+ * 03 June 2015
  *
  */
 public class AddFileFromGeoRequest extends Request {
@@ -17,7 +19,18 @@ public class AddFileFromGeoRequest extends Request {
     private boolean isPrivate;
     private String grVersion;
     private String url;
-    
+
+    /**
+     * Command for adding files from the geo database.
+     * @param experimentID
+     * @param filename
+     * @param type
+     * @param author
+     * @param uploader
+     * @param isPrivate
+     * @param grVersion
+     * @param url
+     */
     public AddFileFromGeoRequest(String experimentID, String filename, String type,
             String author, String uploader, boolean isPrivate, String grVersion, String url) {
         super("addgeofile", "/geo", "POST");

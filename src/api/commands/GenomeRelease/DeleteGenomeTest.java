@@ -3,18 +3,30 @@ package api.commands.GenomeRelease;
 import api.commands.CommandTester;
 import api.commands.SuperTestCommand;
 import model.ErrorLogger;
-import requests.RemoveExperimentRequest;
 import requests.RemoveGenomeReleaseRequest;
 import util.Constants;
 import util.RequestException;
 
 /**
- * Created by c10mjn on 2015-05-26.
+ * Test for deleting a genome.
+ *
+ * @author c10mjn, ens11afk, c12slm
+ * @version 1.0
+ * 03 June 2015
+ *
  */
 public class DeleteGenomeTest extends SuperTestCommand {
+
     private String version;
     private String species;
 
+    /**
+     * Defines which genome to delete.
+     * @param ident
+     * @param species
+     * @param version
+     * @param expectedResult
+     */
     public DeleteGenomeTest(String ident, String species, String version, boolean expectedResult) {
         super(ident, expectedResult);
         this.species = species;

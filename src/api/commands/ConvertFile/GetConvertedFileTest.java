@@ -2,7 +2,6 @@ package api.commands.ConvertFile;
 
 import api.commands.CommandTester;
 import api.commands.ConvertTests;
-import api.commands.FileTests;
 import api.commands.SuperTestCommand;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -13,11 +12,15 @@ import util.FileData;
 import util.RequestException;
 
 /**
- * Created by c10mjn on 2015-05-27.
+ * Command for getting the converted file.
  */
 public class GetConvertedFileTest extends SuperTestCommand {
-    private Gson gson;
 
+    /**
+     *
+     * @param ident
+     * @param expectedResult
+     */
     public GetConvertedFileTest(String ident, boolean expectedResult) {
         super(ident, expectedResult);
     }
@@ -30,7 +33,7 @@ public class GetConvertedFileTest extends SuperTestCommand {
 
             if (CommandTester.conn.getResponseCode() == 200) {
                 GsonBuilder builder = new GsonBuilder();
-                gson = builder.create();
+                Gson gson = builder.create();
 
                 FileData data = gson.fromJson(CommandTester.conn.getResponseBody(), FileData.class);
 

@@ -8,12 +8,25 @@ import util.AnnotationDataValue;
 import util.RequestException;
 
 /**
- * Created by c10mjn on 2015-05-26.
+ * Test for updating an experiment.
+ *
+ * @author c10mjn, ens11afk, c12slm
+ * @version 1.0
+ * 03 June 2015
+ *
  */
 public class PutExperimentTest extends SuperTestCommand {
+
     String key;
     AnnotationDataValue[] adv;
 
+    /**
+     * Defines the experiment and information to update.
+     * @param ident
+     * @param key
+     * @param advIN
+     * @param expectedResult
+     */
     public PutExperimentTest(String ident, String key, AnnotationDataValue[] advIN, boolean expectedResult) {
         super(ident, expectedResult);
         this.key = key;

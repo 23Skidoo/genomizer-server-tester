@@ -5,13 +5,10 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
-import java.net.MalformedURLException;
-import java.net.ProtocolException;
 import java.net.URL;
 import javax.net.ssl.HttpsURLConnection;
 
 import api.commands.CommandTester;
-import model.ErrorLogger;
 
 import requests.Request;
 import util.RequestException;
@@ -48,8 +45,6 @@ public class Connection {
      *
      * @param ip
      *            the IP address
-     * @param view
-     *            the GUI
      */
     public Connection(String ip) {
 
@@ -122,7 +117,7 @@ public class Connection {
     }
 
     private void connect(Request request, String token, String type)
-            throws MalformedURLException, IOException, ProtocolException {
+            throws IOException {
 
         URL url = new URL(ip + request.url);
 

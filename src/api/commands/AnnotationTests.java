@@ -1,17 +1,21 @@
 package api.commands;
 
 import api.commands.Annotation.*;
-import api.commands.GenomeRelease.DeleteGenomeTest;
-import api.commands.GenomeRelease.GetAllGenomeTest;
-import api.commands.GenomeRelease.GetSpecificGenomeTest;
-import api.commands.GenomeRelease.PostGenomeTest;
 import model.Debug;
 
 /**
- * Created by c10mjn on 2015-05-26.
+ * Class which contains the tests for the annotation commands.
+ *
+ * @author c10mjn, ens11afk, c12slm
+ * @version 1.0
+ * 03 June 2015
+ *
  */
 public class AnnotationTests extends TestCollection{
 
+    /**
+     * Creates the annotation commands to tests.
+     */
     public AnnotationTests(){
         super();
         super.commandList.add(new PostAnnotationFieldTest("POST FORCED DROPDOWN", "Things", new String[]{"One", "Two", "Three", "Four"}, true, true));

@@ -1,7 +1,5 @@
 package util;
 
-import javax.swing.*;
-
 import model.ErrorLogger;
 
 import java.awt.datatransfer.DataFlavor;

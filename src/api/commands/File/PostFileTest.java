@@ -5,20 +5,30 @@ import api.commands.SuperTestCommand;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.annotations.Expose;
-import model.Debug;
 import model.ErrorLogger;
 import requests.AddFileToExperiment;
 import util.Constants;
 import util.RequestException;
 
-import java.io.File;
-
 /**
- * Created by c10mjn on 2015-05-26.
+ * Test for adding a new file to an experiment.
+ *
+ * @author c10mjn, ens11afk, c12slm
+ * @version 1.0
+ * 03 June 2015
+ *
  */
 public class PostFileTest extends SuperTestCommand{
+
     private FileTuple ft;
     private Gson gson;
+
+    /**
+     * Defines the fileTuple to add to the experiment.
+     * @param ident
+     * @param ft
+     * @param expectedResult
+     */
     public PostFileTest(String ident, FileTuple ft, boolean expectedResult) {
         super(ident, expectedResult);
         this.ft = ft;
@@ -59,7 +69,7 @@ public class PostFileTest extends SuperTestCommand{
         @Expose
         public String URLupload;
 
-        public PostFileResponse() {
+        public PostFileResponse(String URLupload) {
             this.URLupload = URLupload;
         }
 

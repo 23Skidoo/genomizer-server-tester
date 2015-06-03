@@ -2,27 +2,31 @@ package api.commands.Annotation;
 
 import api.commands.CommandTester;
 import api.commands.SuperTestCommand;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import communication.HTTPURLUpload;
-import model.Debug;
 import model.ErrorLogger;
-import requests.AddAnnotationRequest;
-import requests.AddGenomeReleaseRequest;
 import requests.AddNewAnnotationValueRequest;
-import responses.sysadmin.AddGenomeReleaseResponse;
 import util.Constants;
 import util.RequestException;
 
-import java.io.IOException;
-
 /**
- * Created by c10mjn on 2015-05-26.
+ * Test for creating an annotation value.
+ *
+ * @author c10mjn, ens11afk, c12slm
+ * @version 1.0
+ * 03 June 2015
+ *
  */
 public class PostAnnotationValueTest extends SuperTestCommand {
+
     private String annotationLabel;
     private String annotationValue;
 
+    /**
+     * Defines the annotation value to create.
+     * @param ident
+     * @param annotationLabel
+     * @param annotationValue
+     * @param expectedResult
+     */
     public PostAnnotationValueTest(String ident, String annotationLabel, String annotationValue, boolean expectedResult) {
         super(ident, expectedResult);
         this.annotationLabel = annotationLabel;

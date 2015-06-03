@@ -8,11 +8,19 @@ import model.Debug;
 import util.StringContainer;
 
 /**
- * Created by c10mjn on 2015-05-27.
+ * Contains all the tests for the conversion commands.
+ *
+ * @author c10mjn, ens11afk, c12slm
+ * @version 1.0
+ * 03 June 2015
+ *
  */
 public class ConvertTests extends TestCollection{
     public static StringContainer convertedFile;
 
+    /**
+     * Defines the test files to use and the commands to test.
+     */
     public ConvertTests() {
         super();
 
@@ -24,6 +32,7 @@ public class ConvertTests extends TestCollection{
         ft1.setType("profile");
         ft1.setGrVersion("MultiFileTest");
 
+        //This reference needs to be set during runtime.
         convertedFile = new StringContainer("");
 
         super.commandList.add(new PostFileTest("POST CONVERT FILE", ft1, true));

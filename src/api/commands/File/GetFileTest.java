@@ -1,23 +1,30 @@
 package api.commands.File;
 
 import api.commands.CommandTester;
-import api.commands.ConvertTests;
-import api.commands.FileTests;
 import api.commands.SuperTestCommand;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 import model.ErrorLogger;
 import requests.DownloadFileRequest;
 import util.Constants;
-import util.FileData;
 import util.RequestException;
 
 /**
- * Created by c10mjn on 2015-05-26.
+ * Test for getting a file from an experiment.
+ *
+ * @author c10mjn, ens11afk, c12slm
+ * @version 1.0
+ * 03 June 2015
+ *
  */
 public class GetFileTest extends SuperTestCommand {
+
     private String expected;
 
+    /**
+     * Define the expected String to find in the response.
+     * @param ident
+     * @param expected
+     * @param expectedResult
+     */
     public GetFileTest(String ident, String expected, boolean expectedResult) {
         super(ident, expectedResult);
         this.expected = expected;

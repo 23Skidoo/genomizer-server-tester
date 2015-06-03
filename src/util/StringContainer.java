@@ -1,7 +1,14 @@
 package util;
 
 /**
- * Created by c12slm on 2015-06-01.
+ * Class which contains a String which is used as a placeholder in those cases
+ * where you need to set the reference during runtime.
+ * Contains some standard getters and setters.
+ *
+ * @author c10mjn, ens11afk, c12slm
+ * @version 1.0
+ * 03 June 2015
+ *
  */
 public class StringContainer {
     private String s;

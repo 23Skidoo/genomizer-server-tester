@@ -8,12 +8,25 @@ import util.AnnotationDataValue;
 import util.RequestException;
 
 /**
- * Created by c10mjn on 2015-05-26.
+ * Test for creating a new experiment.
+ *
+ * @author c10mjn, ens11afk, c12slm
+ * @version 1.0
+ * 03 June 2015
+ *
  */
 public class PostExperimentTest extends SuperTestCommand {
-    AnnotationDataValue[] adv;
+
+    private AnnotationDataValue[] adv;
     private String key;
 
+    /**
+     * Sets the information for the experiment to create.
+     * @param ident
+     * @param key
+     * @param adv
+     * @param expectedResult
+     */
     public PostExperimentTest(String ident, String key, AnnotationDataValue[] adv, boolean expectedResult) {
         super(ident, expectedResult);
         this.key = key;

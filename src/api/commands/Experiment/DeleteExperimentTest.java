@@ -8,12 +8,23 @@ import util.Constants;
 import util.RequestException;
 
 /**
- * Created by c10mjn on 2015-05-26.
+ * Test for deleting an experiment.
+ *
+ * @author c10mjn, ens11afk, c12slm
+ * @version 1.0
+ * 03 June 2015
+ *
  */
 public class DeleteExperimentTest extends SuperTestCommand {
+
     private String key;
 
-
+    /**
+     * Defines which experiment to delete.
+     * @param ident
+     * @param key
+     * @param expectedResult
+     */
     public DeleteExperimentTest(String ident, String key, boolean expectedResult) {
         super(ident, expectedResult);
         this.key = key;

@@ -5,11 +5,22 @@ import model.Debug;
 import util.StringContainer;
 
 /**
- * Created by c10mjn on 2015-05-26.
+ * Contains the tests for the file commands.
+ *
+ * @author c10mjn, ens11afk, c12slm
+ * @version 1.0
+ * 03 June 2015
+ *
  */
 public class FileTests extends TestCollection {
+
+    /**
+     * Defines the files used in the testing and creates the commands to test.
+     */
     public FileTests() {
         super();
+
+        //fileID needs to be set during runtime.
         CommandTester.fileID = new StringContainer("");
 
         FileTuple ft1 = new FileTuple();

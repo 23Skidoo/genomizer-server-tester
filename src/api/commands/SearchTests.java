@@ -1,15 +1,21 @@
 package api.commands;
 
-import api.commands.Experiment.GetExperimentTest;
 import api.commands.Search.SearchTestExpID;
 import model.Debug;
 
 /**
- * Created by c10mjn on 2015-05-27.
+ * Class containing the tests for the search commands.
+ *
+ * @author c10mjn, ens11afk, c12slm
+ * @version 1.0
+ * 03 June 2015
+ *
  */
 public class SearchTests extends TestCollection {
 
-
+    /**
+     * Creates the commands to test.
+     */
     public SearchTests() {
         super();
 

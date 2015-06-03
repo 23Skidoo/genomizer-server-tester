@@ -3,21 +3,32 @@ package api.commands.Annotation;
 import api.commands.CommandTester;
 import api.commands.SuperTestCommand;
 import model.ErrorLogger;
-import requests.ChangeExperimentRequest;
-import requests.RenameAnnotationFieldRequest;
 import requests.RenameAnnotationValueRequest;
-import util.AnnotationDataValue;
 import util.Constants;
 import util.RequestException;
 
 /**
- * Created by c10mjn on 2015-05-26.
+ * Test for updating an annotation value.
+ *
+ * @author c10mjn, ens11afk, c12slm
+ * @version 1.0
+ * 03 June 2015
+ *
  */
 public class PutAnnotationValueTest extends SuperTestCommand {
+
     private String annotationName;
     private String oldName;
     private String newName;
 
+    /**
+     * Defines the annotation and information to update.
+     * @param ident
+     * @param annotationName
+     * @param oldName
+     * @param newName
+     * @param expectedResult
+     */
     public PutAnnotationValueTest(String ident, String annotationName,
                                   String oldName, String newName, boolean expectedResult) {
         super(ident, expectedResult);

@@ -1,22 +1,24 @@
 package api.commands;
 
-import api.commands.Annotation.DeleteAnnotationFieldTest;
-import api.commands.Experiment.DeleteExperimentTest;
-import api.commands.Experiment.GetExperimentTest;
-import api.commands.Experiment.PostExperimentTest;
-import api.commands.Experiment.PutExperimentTest;
 import api.commands.GenomeRelease.DeleteGenomeTest;
 import api.commands.GenomeRelease.GetAllGenomeTest;
 import api.commands.GenomeRelease.GetSpecificGenomeTest;
 import api.commands.GenomeRelease.PostGenomeTest;
 import model.Debug;
-import util.AnnotationDataValue;
 
 /**
- * Created by c10mjn on 2015-05-26.
+ * Class which contains the tests for the genome releases.
+ *
+ * @author c10mjn, ens11afk, c12slm
+ * @version 1.0
+ * 03 June 2015
+ *
  */
 public class GenomeReleaseTests extends TestCollection{
 
+    /**
+     * Creates the genome release commands to test.
+     */
     public GenomeReleaseTests(){
         super();
 

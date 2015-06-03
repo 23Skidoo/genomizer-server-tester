@@ -5,24 +5,31 @@ import api.commands.Login.LogoutTest;
 import model.Debug;
 
 /**
- * Created by c10mjn on 2015-05-28.
+ * Class containing the tests for the log in and logout commands.
+ *
+ * @author c10mjn, ens11afk, c12slm
+ * @version 1.0
+ * 03 June 2015
+ *
  */
 public class LoginTests extends TestCollection{
 
+    /**
+     * Creates the log in commands to test.
+     */
     public LoginTests(){
         super();
 
         super.commandList.add(new LoginTest("USER LOGIN", "yuri", "baguette", true));
         super.commandList.add(new LogoutTest("USER LOGOUT", true));
         super.commandList.add(new LogoutTest("USER LOGOUT NOT LOGGED IN", false));
-//        super.commandList.add(new LoginTest("ADMIN LOGIN", "testadmin", "baguette", true));
-//        super.commandList.add(new LogoutTest("ADMIN LOGOUT", true));
-//        super.commandList.add(new LoginTest("GUEST LOGIN", "testguest", "baguette", true));
-//        super.commandList.add(new LogoutTest("GUEST LOGOUT", true));
+
         super.commandList.add(new LoginTest("BAD USERNAME LOGIN", "BLA", "baguette", false));
         super.commandList.add(new LoginTest("BAD PASSWORD LOGIN", "yuri", "BLA", false));
+
         super.commandList.add(new LoginTest("NO  USERNAME LOGIN", "", "baguette", false));
         super.commandList.add(new LoginTest("NO  PASSWORD LOGIN", "yuri", "", false));
+
         super.commandList.add(new LoginTest("GARBAGE USERNAME LOGIN", garbage, "baguette", false));
         super.commandList.add(new LoginTest("GARBAGE PASSWORD LOGIN", "yuri", garbage, false));
     }

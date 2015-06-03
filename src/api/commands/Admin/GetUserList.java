@@ -6,20 +6,28 @@ import model.ErrorLogger;
 import requests.GetUserNamesRequest;
 import responses.ResponseParser;
 import util.Constants;
-import util.FileData;
 import util.RequestException;
 import util.UserList;
 
-import java.util.ArrayList;
-
 /**
- * Created by ens11afk on 2015-06-02.
+ * Test for getting the user list command.
+ *
+ * @author c10mjn, ens11afk, c12slm
+ * @version 1.0
+ * 03 June 2015
+ *
  */
 public class GetUserList extends SuperTestCommand{
 
     public static UserList usernames = new UserList();
     private String expected;
 
+    /**
+     * Defines the expected String to find in the response.
+     * @param ident
+     * @param expected
+     * @param expectedResult
+     */
     public GetUserList(String ident, String expected, boolean expectedResult) {
         super(ident, expectedResult);
         this.expected = expected;

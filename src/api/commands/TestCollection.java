@@ -3,7 +3,12 @@ package api.commands;
 import java.util.ArrayList;
 
 /**
- * Created by c10mjn on 2015-05-26.
+ * Super class for the classes which contains the different tests.
+ *
+ * @author c10mjn, ens11afk, c12slm
+ * @version 1.0
+ * 03 June 2015
+ *
  */
 public abstract class TestCollection {
 
@@ -15,12 +20,22 @@ public abstract class TestCollection {
 
     protected ArrayList<SuperTestCommand> commandList;
 
+    /**
+     * Creates the list containing all the commands to test.
+     */
     public TestCollection(){
         this.commandList = new ArrayList<>();
     }
 
+
+    /**
+     * Should be implemented to execute all the commands in the commandList.
+     * @return true if all the commands in the commandList succeeded, otherwise
+     *          false.
+     */
     public abstract boolean execute();
 
+    //Used as settings for the test run.
     protected static long delay = 0;
     protected static int laps = 1;
     protected static

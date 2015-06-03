@@ -11,7 +11,7 @@ public class LoginResponse extends Response {
     public String role;
 
 
-    public LoginResponse() {
+    public LoginResponse(String token, String role) {
         super("login");
         this.token = token;
         this.role = role;

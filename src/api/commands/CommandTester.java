@@ -13,7 +13,9 @@ import util.StringContainer;
 
 
 /**
- * Created by c10mjn on 2015-05-25.
+ * Class containing all the testing classes. Should handle all the setup and
+ * tear down for the testing. Also contains a few constants which are referenced
+ *  in the test classes.
  */
 public class CommandTester {
     public static String token =  "";
@@ -24,7 +26,10 @@ public class CommandTester {
 
     public static String EXP_NAME = "testExp1";
 
-
+    /**
+     * Runs all the different kinds of commands defined in the test classes.
+     * @param connection The established connection to send the commands to.
+     */
     public CommandTester (Connection connection){
         for(int i = 0; i < TestCollection.laps; i++){
             conn = connection;
@@ -63,14 +68,14 @@ public class CommandTester {
             at.execute();
 
             //PROCESSING
-            ProcessingTests pt = new ProcessingTests();
+//            ProcessingTests pt = new ProcessingTests();
 
 
             //ANNOTATION (POST, PUT, DELETE, GET)
             AnnotationTests a = new AnnotationTests();
             a.execute();
 
-
+            //Clean up for the tests.
             new DeleteGenomeTest("CLEANUP", "Human", "MultiFileTest", true).execute();
             while(FileIndices.getSize() > 0) {
                 ChangeIndex ci = new ChangeIndex("CHANGE INDEX", CommandTester.EXP_NAME, 0, -1, true);
@@ -88,6 +93,7 @@ public class CommandTester {
 
         }
 
+        //Prints the test result in a nice format.
         System.out.println("\n-------------------------------------------------");
         System.out.println("Total tests run: " + TestCollection.runTests);
         System.out.println("Successful tests: " + TestCollection.succeededTests);

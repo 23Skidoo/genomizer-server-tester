@@ -2,20 +2,29 @@ package api.commands.Annotation;
 
 import api.commands.CommandTester;
 import api.commands.SuperTestCommand;
-import model.Debug;
 import model.ErrorLogger;
 import requests.GetAnnotationRequest;
-import requests.GetGenomeReleasesRequest;
-import requests.RetrieveExperimentRequest;
 import util.Constants;
 import util.RequestException;
 
 /**
- * Created by c10mjn on 2015-05-26.
+ * Test for getting the annotations.
+ *
+ * @author c10mjn, ens11afk, c12slm
+ * @version 1.0
+ * 03 June 2015
+ *
  */
 public class GetAnnotationTest extends SuperTestCommand {
+
     private String expected;
 
+    /**
+     * Sets the expected String to find.
+     * @param ident
+     * @param expected
+     * @param expectedResult
+     */
     public GetAnnotationTest(String ident, String expected, boolean expectedResult) {
         super(ident, expectedResult);
         this.expected = expected;

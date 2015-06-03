@@ -2,21 +2,32 @@ package api.commands.GenomeRelease;
 
 import api.commands.CommandTester;
 import api.commands.SuperTestCommand;
-import model.Debug;
 import model.ErrorLogger;
-import requests.GetGenomeReleasesRequest;
 import requests.GetGenomeSpecieReleasesRequest;
-import requests.RetrieveExperimentRequest;
 import util.Constants;
 import util.RequestException;
 
 /**
- * Created by c10mjn on 2015-05-26.
+ * Test for getting a specific genome release.
+ *
+ * @author c10mjn, ens11afk, c12slm
+ * @version 1.0
+ * 03 June 2015
+ *
  */
 public class GetSpecificGenomeTest extends SuperTestCommand {
+
     private String specie;
     private String expected;
 
+    /**
+     * Defines the genome release to get and the expected String to find in the
+     * response.
+     * @param ident
+     * @param specie
+     * @param expected
+     * @param expectedResult
+     */
     public GetSpecificGenomeTest(String ident, String specie, String expected, boolean expectedResult) {
         super(ident, expectedResult);
         this.specie = specie;

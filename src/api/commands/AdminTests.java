@@ -9,10 +9,18 @@ import api.commands.Login.LogoutTest;
 import model.Debug;
 
 /**
- * Created by c10mjn on 2015-05-27.
+ * Class which contains all the tests for the admin commands.
+ *
+ * @author c10mjn, ens11afk, c12slm
+ * @version 1.0
+ * 03 June 2015
+ *
  */
 public class AdminTests extends TestCollection{
 
+    /**
+     * Creates all the admin commands.
+     */
     public AdminTests(){
         super();
 

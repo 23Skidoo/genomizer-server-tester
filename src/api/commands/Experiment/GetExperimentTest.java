@@ -13,13 +13,26 @@ import util.RequestException;
 import java.util.ArrayList;
 
 /**
- * Created by c10mjn on 2015-05-26.
+ * Test for the get experiment command.
+ *
+ * @author c10mjn, ens11afk, c12slm
+ * @version 1.0
+ * 03 June 2015
+ *
  */
 public class GetExperimentTest extends SuperTestCommand {
+
     private String expected;
     private String key;
     private ArrayList<String> fileID;
 
+    /**
+     * Sets the expected String to find in the experiment.
+     * @param ident
+     * @param key
+     * @param expected
+     * @param expectedResult
+     */
     public GetExperimentTest(String ident, String key, String expected, boolean expectedResult) {
         super(ident, expectedResult);
         this.key = key;

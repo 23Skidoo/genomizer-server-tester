@@ -8,12 +8,25 @@ import util.Constants;
 import util.RequestException;
 
 /**
- * Created by c10mjn on 2015-05-27.
+ * Test for the search of a specific expID.
+ *
+ * @author c10mjn, ens11afk, c12slm
+ * @version 1.0
+ * 03 June 2015
+ *
  */
 public class SearchTestExpID extends SuperTestCommand {
+
     public String search;
     public String expected;
 
+    /**
+     * Defines the expected String to find in the search.
+     * @param ident
+     * @param search
+     * @param expected
+     * @param expectedResult
+     */
     public SearchTestExpID(String ident, String search, String expected, boolean expectedResult) {
         super(ident, expectedResult);
         this.search = search;

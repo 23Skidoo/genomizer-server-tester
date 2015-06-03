@@ -3,6 +3,11 @@ package util;
 /**
  * Class representing an annotation. Contains the name of the annotation, the
  * corresponding value and the annotation id.
+ *
+ * @author c10mjn, ens11afk, c12slm
+ * @version 1.0
+ * 03 June 2015
+ *
  */
 public class AnnotationDataValue extends AnnotationData {
 

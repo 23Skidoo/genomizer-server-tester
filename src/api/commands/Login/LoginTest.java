@@ -2,7 +2,6 @@ package api.commands.Login;
 
 import api.commands.CommandTester;
 import api.commands.SuperTestCommand;
-import api.commands.TestCollection;
 import model.ErrorLogger;
 import requests.LoginRequest;
 import responses.LoginResponse;
@@ -10,12 +9,25 @@ import responses.ResponseParser;
 import util.RequestException;
 
 /**
- * Created by c10mjn on 2015-05-28.
+ * Test for the log in command.
+ *
+ * @author c10mjn, ens11afk, c12slm
+ * @version 1.0
+ * 03 June 2015
+ *
  */
 public class LoginTest extends SuperTestCommand {
+
     private String username;
     private String password;
 
+    /**
+     * Sets the username and password for the log in.
+     * @param ident
+     * @param username
+     * @param password
+     * @param expectedResult
+     */
     public LoginTest(String ident, String username, String password, boolean expectedResult) {
         super(ident, expectedResult);
         this.username = username;

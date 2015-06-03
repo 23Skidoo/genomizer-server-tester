@@ -1,7 +1,13 @@
 package api.commands.File;
 
 /**
- * Created by c10mjn on 2015-05-26.
+ * Class containing the information about a given file.
+ * Contains a lot of getters and setters.
+ *
+ * @author c10mjn, ens11afk, c12slm
+ * @version 1.0
+ * 03 June 2015
+ *
  */
 public class FileTuple {
     private String id;

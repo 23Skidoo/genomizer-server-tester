@@ -23,6 +23,16 @@ public class PostAdminUserTest extends SuperTestCommand {
     private String name;
     private String email;
 
+    /**
+     * Creates the information for creating a new user.
+     * @param ident The test's identity
+     * @param username The username for the new user.
+     * @param password The password for the new user.
+     * @param privileges The privilages for the new user.
+     * @param name The real name of the new user.
+     * @param email The email of the new user.
+     * @param expectedResult The expected result for the command.
+     */
     public PostAdminUserTest(String ident, String username, String password,
                              String privileges, String name, String email, boolean expectedResult){
         super(ident, expectedResult);

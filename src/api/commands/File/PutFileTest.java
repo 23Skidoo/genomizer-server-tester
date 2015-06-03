@@ -1,7 +1,6 @@
 package api.commands.File;
 
 import api.commands.CommandTester;
-import api.commands.FileTests;
 import api.commands.SuperTestCommand;
 import model.ErrorLogger;
 import requests.UpdateFileRequest;
@@ -9,12 +8,25 @@ import util.Constants;
 import util.RequestException;
 
 /**
- * Created by c10mjn on 2015-05-26.
+ * Test for updating a file.
+ *
+ * @author c10mjn, ens11afk, c12slm
+ * @version 1.0
+ * 03 June 2015
+ *
  */
 public class PutFileTest extends SuperTestCommand {
+
     private String expected;
     private FileTuple ft;
 
+    /**
+     * Defines the fileTuple to update and the expected String to find.
+     * @param ident
+     * @param ft
+     * @param expected
+     * @param expectedResult
+     */
     public PutFileTest(String ident, FileTuple ft, String expected, boolean expectedResult) {
         super(ident,expectedResult);
         this.expected = expected;
@@ -31,7 +43,6 @@ public class PutFileTest extends SuperTestCommand {
             }
         } catch (RequestException e) {
             if (super.expectedResult) ErrorLogger.log(e);
-//            System.out.println(CommandTester.conn.getResponseCode() + " , " + CommandTester.conn.getResponseBody());
         }
     }
 }

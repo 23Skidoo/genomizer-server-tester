@@ -5,10 +5,18 @@ import model.Debug;
 import util.AnnotationDataValue;
 
 /**
- * Created by c10mjn on 2015-05-26.
+ * Class containing the experiment tests.
+ *
+ * @author c10mjn, ens11afk, c12slm
+ * @version 1.0
+ * 03 June 2015
+ *
  */
 public class ExperimentTests extends TestCollection{
 
+    /**
+     * Defines and creates the commands used during the testing.
+     */
     public ExperimentTests(){
         super();
         AnnotationDataValue[] adv1 = {new AnnotationDataValue(null, "Species", "Fly"),
